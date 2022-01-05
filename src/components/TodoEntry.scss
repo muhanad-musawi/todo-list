@@ -1,0 +1,22 @@
+.entry{   
+  padding-top: 10px; 
+  padding-bottom: 10px;
+  width: 100%;
+  display: flex; 
+  border: 5px solid grey;
+} 
+
+.checkbox{  
+  margin: auto auto;
+flex: 20%;
+} 
+
+.todoText {  
+  text-align: center;
+  flex: 60%;
+}
+
+.todoDelete {  
+  text-align: center;
+  flex: 20%;
+}
