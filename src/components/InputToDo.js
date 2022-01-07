@@ -23,7 +23,7 @@ const changeHandler = (event) => {
 };
  
   return(   
-    <div>
+    <div  className="inputToDo">
    <input value= {userInput} type="text" className="inputText" onChange={changeHandler}></input> 
    <button onClick={buttonClick } className="inputBtn">Add</button>  
  

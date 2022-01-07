@@ -23,7 +23,18 @@ function reducer(state, action) {
         check: false, 
 
       } ,...state]
-      break;
+      break; 
+      case 'check' :  
+      const idTOCheck = action.payload
+       return state.map((todo) =>{  
+        if (todo.id === idTOCheck) {
+          return {...todo , check: !todo.check}
+      } else { 
+        return todo 
+        
+      }
+       }) 
+      break; 
       case 'delete':  
        const idTODelete = action.payload 
       return state.filter( (todo) => { 
@@ -45,11 +56,7 @@ function reducer(state, action) {
 
 
 const initialState = [ 
-  { 
-    id: getNewId(), 
-    text: '',
-    done: false,
-  }
+
 ] 
 
 function App() { 
@@ -71,14 +78,32 @@ function App() {
      
    
     <h1>Todo</h1>
-     <BoxToDo todos={toDoArray} onDelete={ (userInputDelete) => dispatch(  {
+     <BoxToDo todos={toDoArray.filter((todo) => { 
+       return todo.check ? false: true})} onDelete={ (userInputDelete) => dispatch(  {
        type: 'delete', 
        payload: userInputDelete,
 
-     })}/> 
+     })} 
+     onCheck={ (userInputCheck) => dispatch(  {
+      type: 'check', 
+      payload: userInputCheck,
+
+    })}
+     /> 
 
      <h1>Done</h1>
-     <BoxToDo todos={toDoArray} />
+     <BoxToDo todos={toDoArray.filter((todo) => { 
+       return todo.check ? true : false})}  
+       onDelete={ (userInputDelete) => dispatch(  {
+        type: 'delete', 
+        payload: userInputDelete,
+ 
+      })} 
+      onCheck={ (userInputCheck) => dispatch(  {
+        type: 'check', 
+        payload: userInputCheck,
+  
+      })}/>
     </main>
   );
 }

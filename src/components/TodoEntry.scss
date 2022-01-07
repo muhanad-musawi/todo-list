@@ -1,22 +1,33 @@
-.entry{   
+ 
+ .toDoEntry{  
+   display: flex; 
+   justify-content: center;
+   width: 100%;
+ }
+ .entry{   
+  text-align: center;
+  margin-top: 10px;
   padding-top: 10px; 
   padding-bottom: 10px;
-  width: 100%;
-  display: flex; 
-  border: 5px solid grey;
-} 
+  width: 95%;
+  display: flex;   
+  align-items: center;
+  border: 5px solid grey; 
+ }
 
 .checkbox{  
-  margin: auto auto;
-flex: 20%;
+  width: 20px;
+  height: 20px;
+flex: 10%;
 } 
 
 .todoText {  
-  text-align: center;
-  flex: 60%;
+  font-size: 25px;
+  flex: 80%;
 }
 
 .todoDelete {  
-  text-align: center;
-  flex: 20%;
+  font-weight: bolder; 
+  font-size: 25px;
+  flex: 10%;
 }

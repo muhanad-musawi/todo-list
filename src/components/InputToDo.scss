@@ -1,11 +1,17 @@
-.inputText  { 
+.inputToDo{  
+ text-align: center;
+ width: 100%; 
+}
+.inputText  {  
+  width: 65%;
   padding: 12px 20px; 
   box-sizing: border-box; 
-  border: 2px solid  grey;
+  border: 5px solid  grey;
 } 
 
-.inputBtn{ 
+.inputBtn{  
+  width: 30%;
  background-color: grey; 
  color: white; 
- padding: 12px 20px; 
+ padding: 15px 20px; 
 }
